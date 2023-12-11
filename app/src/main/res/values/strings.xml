@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">TakeMyFace</string>
+    <string name="tab_text_1">生成Token</string>
+    <string name="tab_text_2">打卡</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">统一认证账号</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"登录成功!"</string>
+    <string name="invalid_username">账号无效</string>
+    <string name="invalid_password">至少5个字符</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_failed_Network">"登录失败"</string>
+    <string name="userToken">用户Token</string>
+    <string name="userTokenInput">输入Token</string>
+    <string name="copyToken">复制Token</string>
+    <string name="copied">复制成功</string>
+    <string name="checkSession">验证Token</string>
+    <string name="checkLocation">重新获取当前位置</string>
+    <string name="sign">打卡!</string>
+    <string name="locationTextDefault">未标定位置</string>
+    <string name="locationTextLoading">获取位置中...</string>
+    <string name="selectImg">选择照片</string>
+    <string name="getPermission">请授权存储权限</string>
+    <string name="genOrgToken">校外登录(非校园网必选)</string>
+    <string name="genByPublicNet">非校园网生成的Token</string>
+    <string name="warning">警告</string>
+    <string name="pubNetInfo">由于人脸打卡在校外网不可访问，选中此项将生成统一身份认证Token并可能通过技术手段用于登录学校其他平台，请仅发给信任的人</string>
+</resources>
