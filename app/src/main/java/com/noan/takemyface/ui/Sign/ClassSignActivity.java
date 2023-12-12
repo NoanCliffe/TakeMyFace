@@ -47,6 +47,16 @@ public class ClassSignActivity extends AppCompatActivity {
     TextView locationText;
     IfaceTool iface;
 
+    private void getFaceWithAlert()
+    {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.warning))
+                .setMessage(getString(R.string.faceInfo))
+                .setPositiveButton(getString(R.string.confirm),(d,w)->{getFaceImg();})
+                .setNegativeButton(getString(R.string.cancel), (dialog, which) -> {})
+                .create()
+                .show();
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -153,7 +163,7 @@ public class ClassSignActivity extends AppCompatActivity {
         getFaceBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFaceImg();
+                getFaceWithAlert();
             }
         });
 

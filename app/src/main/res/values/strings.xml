@@ -28,5 +28,6 @@
     <string name="genOrgToken">校外登录(非校园网必选)</string>
     <string name="genByPublicNet">非校园网生成的Token</string>
     <string name="warning">警告</string>
+    <string name="faceInfo">人脸需要充满整个图片(头顶-下巴-双耳为边)<br/>否则可能会识别失败</string>
     <string name="pubNetInfo">由于人脸打卡在校外网不可访问，选中此项将生成统一身份认证Token并可能通过技术手段用于登录学校其他平台，请仅发给信任的人</string>
 </resources>
