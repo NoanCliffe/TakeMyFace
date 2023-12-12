@@ -82,10 +82,14 @@ public class ClassSignActivity extends AppCompatActivity {
                     InputStream inputStream = getContentResolver().openInputStream(data.getData());
                     Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                     Matrix matrix = new Matrix();
-                    float scale = (float) faceImage.getWidth() /bitmap.getWidth();
+                    float scale = (float) (faceImage.getWidth()) /bitmap.getWidth();
+                    matrix.postScale(scale, scale);
+
+                    faceImage.setImageBitmap(Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),bitmap.getHeight(), matrix, true));
+                    scale = 130f /bitmap.getWidth();
                     matrix.postScale(scale, scale);
                     faceScaled = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),bitmap.getHeight(), matrix, true);
-                    faceImage.setImageBitmap(faceScaled);
+                    faceImage.setVisibility(View.VISIBLE);
                     signBut.setEnabled(true);
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
@@ -135,6 +139,7 @@ public class ClassSignActivity extends AppCompatActivity {
 
                 locationText.setText(((Result.Success<String>) newLocation).getData());
                 getFaceBut.setEnabled(true);
+
             } else {
                 locationText.setText(newLocation.toString());
             }

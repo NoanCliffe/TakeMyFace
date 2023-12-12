@@ -41,6 +41,10 @@ public class IfaceTool {
         //this.token = token;
         try {
             OkHttpClient httpClient = new OkHttpClient.Builder().followRedirects(false).cookieJar(cookieStore.getCookieJar()).build();
+            if(token==null || token.equals(""))
+            {
+                throw new OrgTool.LoginError("Token不能为空");
+            }
             try {
                 JSONObject tokenJs = JSONObject.parse(KeyCrypto.decryptToken(token));
                 if(tokenJs.getString("type").equals("org"))
@@ -72,6 +76,10 @@ public class IfaceTool {
                 throw new OrgTool.LoginError("Token无效，请检查");
             } catch (JSONException e) {
                 throw new OrgTool.LoginError("读取Token失败，请重新生成");
+            }
+            catch (OrgTool.LoginError e)
+            {
+                throw new OrgTool.LoginError(e.getMessage()+",请重新生成token");
             }
 
 
